@@ -7,9 +7,9 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// GetToken зчитує TELE_TOKEN із .env або змінної середовища
+// GetToken reads TELE_TOKEN from .env or an environment variable
 func GetToken() string {
-	// Завантажуємо .env (ігноруємо помилку, якщо файл відсутній)
+	// Load .env (ignore error if file is missing)
 	_ = godotenv.Load()
 
 	token := os.Getenv("TELE_TOKEN")

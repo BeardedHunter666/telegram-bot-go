@@ -4,25 +4,25 @@ import (
 	tele "gopkg.in/telebot.v3"
 )
 
-// RegisterHandlers додає всі обробники команд
+// RegisterHandlers adds all command handlers
 func RegisterHandlers(b *tele.Bot) {
 	b.Handle("/start", func(c tele.Context) error {
-		return c.Send("👋 Привіт! Я Telegram-бот на Go. Напиши мені щось!")
+		return c.Send("👋 Hi there! I'm a Telegram bot written in Go. Type something!")
 	})
 
 	b.Handle("/help", func(c tele.Context) error {
-		return c.Send("🤖 Команди доступні для використання:\n/start - привітання\n/help - список команд\n/echo <текст> - повторюю ваше повідомлення")
+		return c.Send("🤖 Commands:\n/start - greeting\n/help - list of commands\n/echo <text> - repeats your message")
 	})
 
 	b.Handle("/echo", func(c tele.Context) error {
 		args := c.Args()
 		if len(args) == 0 {
-			return c.Send("⚠️ Використання: /echo <текст>")
+			return c.Send("⚠️ Usage: /echo <text>")
 		}
 		return c.Send("🪞 " + c.Message().Payload)
 	})
 
 	b.Handle(tele.OnText, func(c tele.Context) error {
-		return c.Send("📨 Ви написали: " + c.Text())
+		return c.Send("📨 You wrote: " + c.Text())
 	})
 }

@@ -7,7 +7,7 @@ import (
 	tele "gopkg.in/telebot.v3"
 )
 
-// Start створює та запускає Telegram-бота
+// Start create and run Telegram-bot
 func Start(token string) {
 	pref := tele.Settings{
 		Token:  token,
@@ -19,7 +19,7 @@ func Start(token string) {
 		log.Fatalf("Failed to create bot: %v", err)
 	}
 
-	// Ініціалізуємо хендлери
+	// Initializing handlers
 	RegisterHandlers(b)
 
 	log.Println("✅ Bot is running...")
