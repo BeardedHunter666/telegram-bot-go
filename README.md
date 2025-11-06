@@ -35,8 +35,10 @@ cd telegram-bot-go
 
 ### 2️⃣ Create `.env` file
 
-In the project root, create a `.env` file and add your bot_token:
-
+In the project root, create a `.env` file and add your TELE_TOKEN:
+```bash
+TELE_TOKEN=123456789:ABCdefGhiJKlmNoPQRstuVWxyZ
+```
 🛑 **Do not commit `.env` to GitHub!**  
 (It’s already included in `.gitignore`)
 
@@ -92,6 +94,26 @@ telegram-bot-go/
 ├── go.mod
 ├── go.sum
 └── main.go
+```
+
+---
+
+## 🧠 Example Handlers
+```go
+b.Handle("/start", func(c tele.Context) error {
+    return c.Send("👋 Hi there! I'm a Telegram bot written in Go. Type something!")
+})
+
+b.Handle("/help", func(c tele.Context) error {
+    return c.Send("🤖 Commands:\n/start - greeting\n/help - list of commands\n/echo <text> - repeats your message")
+})
+
+b.Handle("/echo", func(c tele.Context) error {
+    if c.Message().Payload == "" {
+        return c.Send("⚠️ Usage: /echo <text>")
+    }
+    return c.Send("🪞 " + c.Message().Payload)
+})
 ```
 
 ---
