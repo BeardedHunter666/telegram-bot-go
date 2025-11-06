@@ -36,9 +36,7 @@ cd telegram-bot-go
 ### 2️⃣ Create `.env` file
 
 In the project root, create a `.env` file and add your bot token:
-```bash
-TELE_TOKEN=123456789:ABCdefGhiJKlmNoPQRstuVWxyZ
-```
+
 🛑 **Do not commit `.env` to GitHub!**  
 (It’s already included in `.gitignore`)
 
