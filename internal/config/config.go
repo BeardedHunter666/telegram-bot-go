@@ -7,14 +7,14 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// GetToken reads BOT_TOKEN from .env or an environment variable
+// GetToken reads TELE_TOKEN from .env or an environment variable
 func GetToken() string {
-	// Load .env (ignore error if file is missing)
+	// Завантажуємо .env (ігноруємо помилку, якщо файл відсутній)
 	_ = godotenv.Load()
 
-	token := os.Getenv("BOT_TOKEN")
+	token := os.Getenv("TELE_TOKEN")
 	if token == "" {
-		log.Fatal("❌ BOT_TOKEN is not set. Please check your .env file or environment variable.")
+		log.Fatal("❌ TELE_TOKEN is not set. Please check your .env file or environment variable.")
 	}
 	return token
 }
