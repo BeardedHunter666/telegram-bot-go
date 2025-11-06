@@ -48,8 +48,9 @@ TELE_TOKEN=123456789:ABCdefGhiJKlmNoPQRstuVWxyZ
 ```bash
 go mod tidy
 ```
+---
 
-4️⃣ Run the bot
+### 4️⃣ Run the bot
 ```bash
 go run main.go
 ```
