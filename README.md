@@ -12,6 +12,12 @@ The bot demonstrates clean Go project architecture with:
 
 ---
 
+## Bot Link
+
+[Start the bot in Telegram](https://t.me/test666_golang_bot)
+
+---
+
 ## 🧰 Tech Stack
 
 | Component | Purpose |
