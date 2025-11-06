@@ -96,26 +96,6 @@ telegram-bot-go/
 
 ---
 
-## 🧠 Example Handlers
-```go
-b.Handle("/start", func(c tele.Context) error {
-    return c.Send("👋 Hi there! I'm a Telegram bot written in Go. Type something!")
-})
-
-b.Handle("/help", func(c tele.Context) error {
-    return c.Send("🤖 Commands:\n/start - greeting\n/help - list of commands\n/echo <text> - repeats your message")
-})
-
-b.Handle("/echo", func(c tele.Context) error {
-    if c.Message().Payload == "" {
-        return c.Send("⚠️ Usage: /echo <text>")
-    }
-    return c.Send("🪞 " + c.Message().Payload)
-})
-```
-
----
-
 ## 🧪 Usage Example
 ```bash
 User: /start
